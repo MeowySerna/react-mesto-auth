@@ -41,6 +41,7 @@ export default function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
               minLength="2"
               maxLength="30"
               name="name"
+              value={name || ""}
               className="popup__input"
               placeholder="Название"
               onChange={handleNameChange}
@@ -55,6 +56,7 @@ export default function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
             <input
               id="input_image-link"
               name="link"
+              value={link || ""}
               className="popup__input"
               placeholder="Ссылка на картинку"
               type="url"
