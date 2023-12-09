@@ -197,42 +197,44 @@ function App() {
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="root">
-        <Header onClick={signOut} email={email} loggedIn={loggedIn}/>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <ProtectedRoute
-                element={Main}
-                onEditProfile={handleEditProfileClick}
-                onAddPlace={handleAddPlaceClick}
-                onEditAvatar={handleEditAvatarClick}
-                onCardClick={handleCardClick}
-                cards={cards}
-                onCardLike={handleCardLike}
-                onCardDelete={handleCardDelete}
-                loggedIn={loggedIn}
-              ></ProtectedRoute>
-            }
-          />
-          <Route
-            path="/sign-in"
-            element={
-              <Login setLoggedIn={setLoggedIn} onLogin={handleLogin}></Login>
-            }
-          />
-          <Route
-            path="/sign-up"
-            element={<Register onRegister={handleRegister}></Register>}
-          />
-          <Route
-            path="*"
-            element={
-              loggedIn ? <Navigate to="/" /> : <Navigate to="/sign-in" />
-            }
-          />
-        </Routes>
-        {loggedIn?<Footer />:''}
+        <Header onClick={signOut} email={email} loggedIn={loggedIn} />
+        <main className="main">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <ProtectedRoute
+                  element={Main}
+                  onEditProfile={handleEditProfileClick}
+                  onAddPlace={handleAddPlaceClick}
+                  onEditAvatar={handleEditAvatarClick}
+                  onCardClick={handleCardClick}
+                  cards={cards}
+                  onCardLike={handleCardLike}
+                  onCardDelete={handleCardDelete}
+                  loggedIn={loggedIn}
+                ></ProtectedRoute>
+              }
+            />
+            <Route
+              path="/sign-in"
+              element={
+                <Login setLoggedIn={setLoggedIn} onLogin={handleLogin}></Login>
+              }
+            />
+            <Route
+              path="/sign-up"
+              element={<Register onRegister={handleRegister}></Register>}
+            />
+            <Route
+              path="*"
+              element={
+                loggedIn ? <Navigate to="/" /> : <Navigate to="/sign-in" />
+              }
+            />
+          </Routes>
+        </main>
+        {loggedIn ? <Footer /> : ""}
         <EditProfilePopup
           isOpen={isEditProfilePopupOpen}
           onClose={closeAllPopups}
