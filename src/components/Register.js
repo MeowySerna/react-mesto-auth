@@ -18,7 +18,7 @@ function Register(props) {
   }
 
   return (
-    <>
+    <main className="main">
       <section className="auth">
         <h2 className="auth__title">Регистрация</h2>
         <form className="auth__form" onSubmit={handleSubmit}>
@@ -54,7 +54,7 @@ function Register(props) {
           </div>
         </form>
       </section>
-    </>
+      </main>
   );
 }
 

@@ -198,7 +198,7 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <div className="root">
         <Header onClick={signOut} email={email} loggedIn={loggedIn} />
-        <main className="main">
+        
           <Routes>
             <Route
               path="/"
@@ -233,7 +233,7 @@ function App() {
               }
             />
           </Routes>
-        </main>
+        
         {loggedIn ? <Footer /> : ""}
         <EditProfilePopup
           isOpen={isEditProfilePopupOpen}

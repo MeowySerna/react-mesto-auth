@@ -18,7 +18,7 @@ function Login(props) {
 
 
   return (
-    <>
+    <main className="main">
       <section className="auth">
         <h2 className="auth__title">Вход</h2>
         <form className="auth__form" onSubmit={handleSubmit}>
@@ -48,7 +48,7 @@ function Login(props) {
           </button>
         </form>
       </section>
-    </>
+      </main>
   );
 }
 
